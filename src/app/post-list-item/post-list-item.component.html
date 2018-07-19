@@ -2,7 +2,7 @@
                 'list-group-item-success': postLoveIts > 0,
                 'list-group-item-danger': postLoveIts < 0}">
   <article>
-    <p class="pull-right"><time datetime="2018-07-18 15:11">{{ postDate | date: 'short' }}</time></p>
+    <p class="pull-right">{{ postDate | date: 'short' }}</p>
     <h3>{{  postTitle }}</h3>
     <p>{{ postContent }}</p>
     <ul class="list-inline">
