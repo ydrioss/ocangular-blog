@@ -1,4 +1,6 @@
-<li class="list-group-item">
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': postLoveIts > 0,
+                'list-group-item-danger': postLoveIts < 0}">
   <article>
     <p class="pull-right"><time datetime="2018-07-18 15:11">{{ postDate | date: 'short' }}</time></p>
     <h3>{{  postTitle }}</h3>
@@ -6,6 +8,7 @@
     <ul class="list-inline">
       <li class="list-inline-item"><button class="btn btn-success">Love it!</button></li>
       <li class="list-inline-item"><button class="btn btn-danger">Don't love it!</button></li>
+      <li class="list-inline-item">({{ postLoveIts }})</li>
     </ul>
   </article>
 </li>

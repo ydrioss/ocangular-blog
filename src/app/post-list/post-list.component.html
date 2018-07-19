@@ -2,5 +2,6 @@
   <app-post-list-item *ngFor="let post of postsArray"
                       [postTitle]="post.title"
                       [postContent]="post.content"
-                      [postDate]="post.created_at"></app-post-list-item>
+                      [postDate]="post.created_at"
+                      [postLoveIts]="post.loveIts"></app-post-list-item>
 </ul>
