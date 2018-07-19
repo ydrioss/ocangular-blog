@@ -17,4 +17,14 @@ export class PostListItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  onLoveIt() {
+    this.postLoveIts++;
+    console.log(`upvote => ${this.postLoveIts}`);
+  }
+
+  onDontLoveIt() {
+    this.postLoveIts--;
+    console.log(`downvote => ${this.postLoveIts}`);
+  }
+
 }
