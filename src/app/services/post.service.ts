@@ -50,5 +50,17 @@ export class PostService {
     }
   }
 
+  upvote(post: Post) {
+    post.loveIts++;
+    console.log(`upvote => ${post.loveIts}`);
+    this.emitPostSubject();
+  }
+
+  downvote(post: Post) {
+    post.loveIts--;
+    console.log(`downvote => ${post.loveIts}`);
+    this.emitPostSubject();
+  }
+
   constructor() { }
 }
