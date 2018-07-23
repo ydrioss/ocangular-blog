@@ -5,11 +5,15 @@
     <p class="pull-right">{{ postDate | date: 'short' }}</p>
     <h3>{{  postTitle }}</h3>
     <p>{{ postContent }}</p>
+
+
     <ul class="list-inline">
+      <li class="pull-right  list-inline-item"><button class="btn btn-warning"
+                                           (click)="onDeletePost(post)"><span class="glyphicon glyphicon-minus"></span> Supprimer post</button></li>
       <li class="list-inline-item"><button class="btn btn-success"
-                                          (click)="onLoveIt()">Love it!</button></li>
+                                          (click)="onLoveIt(post)">Love it!</button></li>
       <li class="list-inline-item"><button class="btn btn-danger"
-                                          (click)="onDontLoveIt()">Don't love it!</button></li>
+                                          (click)="onDontLoveIt(post)">Don't love it!</button></li>
       <li class="list-inline-item">({{ postLoveIts }})</li>
     </ul>
   </article>

@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="jumbotron  text-center" style="background-color: rgba(200, 200, 200, .4)">
   <h1>
     Bienvenue sur {{ title }} !
@@ -5,7 +6,5 @@
 </div>
 
 <div class="container">
-  <h2 class="text-white">Mes posts :</h2>
-
-  <app-post-list [postsArray]="posts"></app-post-list>
+  <router-outlet></router-outlet>
 </div>
