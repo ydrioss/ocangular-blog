@@ -36,26 +36,18 @@ export class PostService {
     this.postSubject.next(this.posts.slice());
   }
 
-  addPost(title: string, content: string) {
-    const postObject = {
-      id: 0,
-      title: '',
-      content: '',
-      loveIts: 0,
-      created_at: new Date()
-    };
-    postObject.title = title;
-    postObject.content = content;
-    postObject.id = this.posts[(this.posts.length-1)].id + 1;
-    this.posts.push(postObject);
+  addPost(newPost: Post) {
+    this.posts.push(newPost);
     this.emitPostSubject();
   }
 
   removePost(post: Post) {
-    const postIndex = this.posts.indexOf(post);
-    // console.log(postIndex);
-    this.posts.splice(postIndex, 1);
-    this.emitPostSubject();
+    if(confirm('Êtes-vous sûr de vouloir supprimer ce post ?')) {
+      const postIndex = this.posts.indexOf(post);
+      // console.log(postIndex);
+      this.posts.splice(postIndex, 1);
+      this.emitPostSubject();
+    }
   }
 
   constructor() { }
