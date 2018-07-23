@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { Post } from '../models/post.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
-  postSubject = new Subject<any[]>();
+  postSubject = new Subject<Post[]>();
 
   private posts = [
     {
@@ -41,7 +42,7 @@ export class PostService {
       title: '',
       content: '',
       loveIts: 0,
-      created_at: new Date();
+      created_at: new Date()
     };
     postObject.title = title;
     postObject.content = content;
@@ -50,7 +51,12 @@ export class PostService {
     this.emitPostSubject();
   }
 
-
+  removePost(post: Post) {
+    const postIndex = this.posts.indexOf(post);
+    // console.log(postIndex);
+    this.posts.splice(postIndex, 1);
+    this.emitPostSubject();
+  }
 
   constructor() { }
 }
